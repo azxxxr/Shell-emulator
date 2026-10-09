@@ -1,0 +1,12 @@
+ls
+ls -la /home "my documents" 'single quoted' a"b c"d
+cd /usr/local
+cd "Program Files"
+cd 'dir with   spaces'
+cd ""
+echo "not implemented"
+cd a b
+ls -z
+ls "unclosed quote
+ls escaped\ space "say \"hi\""
+exit abc

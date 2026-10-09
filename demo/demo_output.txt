@@ -1,0 +1,33 @@
+nikita@myvfs:~$ ls
+[stub] command: ls
+[stub] args (0):
+nikita@myvfs:~$ ls -la /home "my documents" 'single quoted' a"b c"d
+[stub] command: ls
+[stub] args (5): "-la" "/home" "my documents" "single quoted" "ab cd"
+nikita@myvfs:~$ cd /usr/local
+[stub] command: cd
+[stub] args (1): "/usr/local"
+nikita@myvfs:~$ cd "Program Files"
+[stub] command: cd
+[stub] args (1): "Program Files"
+nikita@myvfs:~$ cd 'dir with   spaces'
+[stub] command: cd
+[stub] args (1): "dir with   spaces"
+nikita@myvfs:~$ cd ""
+[stub] command: cd
+[stub] args (1): ""
+nikita@myvfs:~$ echo "not implemented"
+myvfs: echo: command not found
+nikita@myvfs:~$ cd a b
+myvfs: cd: too many arguments
+nikita@myvfs:~$ ls -z
+ls: invalid option -- 'z'
+nikita@myvfs:~$ ls "unclosed quote
+myvfs: syntax error: unexpected EOF while looking for matching `"'
+nikita@myvfs:~$ ls escaped\ space "say \"hi\""
+[stub] command: ls
+[stub] args (2): "escaped space" "say "hi""
+nikita@myvfs:~$ exit abc
+exit
+myvfs: exit: abc: numeric argument required
+[exit code: 2]
